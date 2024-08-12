@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earth Rotating Around Sun</title>
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sun {
+    width: 100px;
+    height: 100px;
+    /* background-color: #ffcc00; */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+    /* box-shadow: 0 0 50px #ffcc00; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .earth-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    margin: -150px 0 0 -150px;
+    border: 1px dashed #ccc;
+    border-radius: 50%;
+    animation: orbitEarth 10s linear infinite;
+  }
+
+  .earth-orbit2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    margin: -250px 0 0 -250px;
+    border: 1px dashed #ccc;
+    border-radius: 50%;
+    animation: orbitEarthReverse 10s linear infinite;
+  }
+  
+  .earth {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: -15px 0 0 -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @keyframes orbitEarth {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes orbitEarthReverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="sun">
+      <img src="https://github.com/JanithDisanayake/JanithDisanayake/raw/main/Images/earth.gif" width="150px" height="150px"/>
+  </div>
+  <div class="earth-orbit">
+    <!-- <div class="earth" style="animation-delay: 5s;"></div> -->
+    <div class="earth" style="animation-delay: 5s; background-color: #ffffff; top: 0%; left: 50%; animation: orbitEarthReverse 10s linear infinite;">
+      <img src="https://cdn.worldvectorlogo.com/logos/golang-1.svg" width="60px" />
+    </div>
+    <div class="earth" style="animation-delay: 5s; background-color: #ffffff; top: 50%; left: 0; animation: orbitEarthReverse 10s linear infinite;">
+      <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="50px" height="50px"/>
+    </div>
+    <div class="earth" style="animation-delay: 5s; top: 100%; left: 50%; animation: orbitEarthReverse 10s linear infinite;">
+      <img src="https://github.com/JanithDisanayake/JanithDisanayake/raw/main/Images/html5-logo.svg" width="40px"/>
+    </div>
+    <div class="earth" style="animation-delay: 5s; top: 50%; left: 100%; animation: orbitEarthReverse 10s linear infinite;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg" width="50px" height="50px"/>
+    </div>
+
+    <div class="earth" style="animation-delay: 5s; top: 85%; left: 15%; animation: orbitEarthReverse 10s linear infinite;">
+      <img src="https://github.com/JanithDisanayake/JanithDisanayake/raw/main/Images/java-logo.png" width="40px"/>
+    </div>
+    <div class="earth" style="animation-delay: 5s; top: 15%; left: 85%; animation: orbitEarthReverse 10s linear infinite;">
+      <img src="https://raw.githubusercontent.com/JanithDisanayake/JanithDisanayake/5cc8c54bdddf5c235d4ab53ba95f304364a85d73/Images/javascript-logo.svg" width="40px"/>
+    </div>
+    <div class="earth" style="animation-delay: 5s; top: 15%; left: 15%; animation: orbitEarthReverse 10s linear infinite;">
+      <img src="https://github.com/JanithDisanayake/JanithDisanayake/blob/main/Images/python-logo.png?raw=true" width="40px"/>
+    </div>
+    <div class="earth" style="animation-delay: 5s; top: 85%; left: 85%; animation: orbitEarthReverse 10s linear infinite;">
+      <img src="https://raw.githubusercontent.com/JanithDisanayake/JanithDisanayake/5cc8c54bdddf5c235d4ab53ba95f304364a85d73/Images/git-logo.svg" width="40px"/>
+    </div>
+  </div>
+  <div class="earth-orbit2">
+    <!-- <div class="earth" style="animation-delay: 5s;"></div> -->
+    <div class="earth" style="animation-delay: 5s; background-color: #ffffff; top: 0%; left: 50%; animation: orbitEarth 10s linear infinite;">
+      <img src="https://cdn.worldvectorlogo.com/logos/golang-1.svg" width="60px" />
+    </div>
+    <div class="earth" style="animation-delay: 5s; background-color: #ffffff; top: 50%; left: 0; animation: orbitEarth 10s linear infinite;">
+      <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="50px" height="50px"/>
+    </div>
+    <div class="earth" style="animation-delay: 5s; top: 100%; left: 50%; animation: orbitEarth 10s linear infinite;">
+      <img src="https://github.com/JanithDisanayake/JanithDisanayake/raw/main/Images/html5-logo.svg" width="40px"/>
+    </div>
+    <div class="earth" style="animation-delay: 5s; top: 50%; left: 100%; animation: orbitEarth 10s linear infinite;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg" width="50px" height="50px"/>
+    </div>
+
+    <div class="earth" style="animation-delay: 5s; top: 85%; left: 15%; animation: orbitEarth 10s linear infinite;">
+      <img src="https://github.com/JanithDisanayake/JanithDisanayake/raw/main/Images/java-logo.png" width="40px"/>
+    </div>
+    <div class="earth" style="animation-delay: 5s; top: 15%; left: 85%; animation: orbitEarth 10s linear infinite;">
+      <img src="https://raw.githubusercontent.com/JanithDisanayake/JanithDisanayake/5cc8c54bdddf5c235d4ab53ba95f304364a85d73/Images/javascript-logo.svg" width="40px"/>
+    </div>
+    <div class="earth" style="animation-delay: 5s; top: 15%; left: 15%; animation: orbitEarth 10s linear infinite;">
+      <img src="https://github.com/JanithDisanayake/JanithDisanayake/blob/main/Images/python-logo.png?raw=true" width="40px"/>
+    </div>
+    <div class="earth" style="animation-delay: 5s; top: 85%; left: 85%; animation: orbitEarth 10s linear infinite;">
+      <img src="https://raw.githubusercontent.com/JanithDisanayake/JanithDisanayake/5cc8c54bdddf5c235d4ab53ba95f304364a85d73/Images/git-logo.svg" width="40px"/>
+    </div>
+  </div>
+</body>
+</html>
