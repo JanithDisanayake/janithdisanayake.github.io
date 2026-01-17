@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Janith Disanayake | Full Stack Developer & AI Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --darker: #0a0f1c;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #c7d2fe;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* CV Section */
+        .cv-section {
+            min-height: 100vh;
+            padding: 120px 0 60px;
+            position: relative;
+        }
+        
+        .cv-section::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: var(--gradient);
+            filter: blur(100px);
+            opacity: 0.2;
+            top: 0;
+            right: -100px;
+            z-index: -1;
+        }
+        
+        .cv-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .cv-header h1 {
+            font-size: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .cv-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        .download-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+        
+        .download-btn i {
+            font-size: 1.2rem;
+        }
+        
+        .cv-preview {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        .cv-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .cv-section-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+        }
+        
+        .cv-section-title:first-child {
+            margin-top: 0;
+        }
+        
+        .personal-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .personal-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .personal-info .title {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            color: var(--gray);
+        }
+        
+        .contact-info a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+        
+        .experience-item,
+        .education-item,
+        .project-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .experience-item:last-child,
+        .education-item:last-child,
+        .project-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .item-title {
+            font-size: 1.3rem;
+            color: var(--light);
+        }
+        
+        .item-date {
+            color: var(--primary);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .item-company,
+        .item-institution {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .item-location {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .item-description ul {
+            padding-left: 20px;
+            color: #cbd5e1;
+        }
+        
+        .item-description li {
+            margin-bottom: 8px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .skill-category {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .skill-category h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 5px 0;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .skill-category li::before {
+            content: '▹';
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .certifications-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .certification-item {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .certification-name {
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+        
+        .certification-issuer {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        .certification-date {
+            color: var(--primary);
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.9);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-link:hover {
+            background: var(--gradient);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cv-header h1 {
+                font-size: 2rem;
+            }
+            
+            .cv-preview {
+                padding: 25px;
+            }
+            
+            .personal-info h2 {
+                font-size: 2rem;
+            }
+            
+            .item-header {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            header,
+            .download-section,
+            footer {
+                display: none;
+            }
+            
+            .cv-preview {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../" class="logo">Portfolio</a>
+                <div class="nav-links">
+                    <a href="../#home">Home</a>
+                    <a href="../#experience">Experience</a>
+                    <a href="../#skills">Skills</a>
+                    <a href="../#projects">Projects</a>
+                    <a href="./">CV</a>
+                    <a href="../#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CV Section -->
+    <section class="cv-section">
+        <div class="container">
+            <div class="cv-header">
+                <h1>Curriculum Vitae</h1>
+                <p>Download or preview my complete CV below</p>
+            </div>
+
+            <!-- Download Button -->
+            <div class="download-section">
+                <a href="v3.2.janithdisanayake-resume.pdf" download class="download-btn">
+                    <i class="fas fa-download"></i>
+                    Download CV (PDF)
+                </a>
+            </div>
+
+            <!-- PDF Preview -->
+            <div class="cv-preview" style="padding: 0; overflow: hidden; min-height: 1000px;">
+                <iframe 
+                    src="v3.2.janithdisanayake-resume.pdf" 
+                    width="100%" 
+                    height="1000px" 
+                    style="border: none; border-radius: 15px;"
+                    title="CV Preview">
+                </iframe>
+            </div>
+
+            <!-- CV Preview -->
+            <div class="cv-preview" style="display: none;">
+                <div class="cv-content">
+                    <!-- Personal Information -->
+                    <div class="personal-info">
+                        <h2>Janith Disanayake</h2>
+                        <div class="title">Full Stack Developer & AI Engineer</div>
+                        <div class="contact-info">
+                            <span><i class="fas fa-envelope"></i> <a href="mailto:janithdisanayake23@gmail.com">janithdisanayake23@gmail.com</a></span>
+                            <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/janith-disanayake/" target="_blank">LinkedIn</a></span>
+                            <span><i class="fab fa-github"></i> <a href="https://github.com/JanithDisanayake" target="_blank">GitHub</a></span>
+                            <span><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</span>
+                        </div>
+                    </div>
+
+                    <!-- Professional Summary -->
+                    <h3 class="cv-section-title">Professional Summary</h3>
+                    <p style="color: #cbd5e1; margin-bottom: 20px;">
+                        Experienced software engineer specializing in full-stack development, AI integration, and cloud solutions. 
+                        Proven track record in leading development teams, implementing DevOps practices, and building scalable 
+                        applications. Passionate about leveraging emerging technologies to solve complex problems and mentoring 
+                        junior developers to achieve their full potential.
+                    </p>
+
+                    <!-- Professional Experience -->
+                    <h3 class="cv-section-title">Professional Experience</h3>
+                    
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Team Lead</div>
+                                <div class="item-company">Cloud Parallax (Pvt) Ltd</div>
+                                <div class="item-location">Colombo, Sri Lanka</div>
+                            </div>
+                            <div class="item-date">05/2025 - Present</div>
+                        </div>
+                        <div class="item-description">
+                            <ul>
+                                <li>Led the development of an AI-powered travel planning application using Flutter, OpenAI API, and Supabase, enabling real-time itinerary generation and smart recommendations.</li>
+                                <li>Implemented prompt engineering strategies and managed vector database integration for semantic search and user personalization.</li>
+                                <li>Oversaw sprint planning, code reviews, and architectural planning across all projects.</li>
+                                <li>Mentored a team of 6+ developers, assisted with technical upskilling, and improved delivery velocity.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">DevOps Engineer</div>
+                                <div class="item-company">Cloud Parallax (Pvt) Ltd</div>
+                                <div class="item-location">Colombo, Sri Lanka</div>
+                            </div>
+                            <div class="item-date">08/2024 - 05/2025</div>
+                        </div>
+                        <div class="item-description">
+                            <ul>
+                                <li>Created robust CI/CD pipelines with GitHub Actions, Docker, and AWS Lambda, reducing deployment time by 60%.</li>
+                                <li>Automated cloud infrastructure with AWS services (S3, ECS, CloudWatch) and ensured high availability.</li>
+                                <li>Spearheaded performance monitoring, container optimization, and rollout strategies for scalable deployments.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Full Stack Developer</div>
+                                <div class="item-company">Cloud Parallax (Pvt) Ltd</div>
+                                <div class="item-location">Colombo, Sri Lanka</div>
+                            </div>
+                            <div class="item-date">05/2023 - 08/2024</div>
+                        </div>
+                        <div class="item-description">
+                            <ul>
+                                <li>Developed Canadian courier service application using Angular, Svelte, and GoLang for admin, user front-end, and backend systems.</li>
+                                <li>Collaborated on contract management project utilizing Svelte, GraphQL, and Go, building calculator module.</li>
+                                <li>Provided technical training and mentorship to junior developers, ensuring strong grasp of core technologies and best practices.</li>
+                                <li>Contributed to hiring process by assisting in candidate evaluation and onboarding support.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Software Implementor</div>
+                                <div class="item-company">Datanation Systems (Pvt) Ltd</div>
+                                <div class="item-location">Colombo, Sri Lanka</div>
+                            </div>
+                            <div class="item-date">03/2023 - 05/2023</div>
+                        </div>
+                        <div class="item-description">
+                            <ul>
+                                <li>Delivered technical training at Lipton Tea, helping clients effectively manage their workflows using ERP software.</li>
+                                <li>Provided implementation support and ensured seamless software adoption across departments.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <h3 class="cv-section-title">Education</h3>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">BSc (Hons) in Computing</div>
+                                <div class="item-institution">Coventry University, United Kingdom</div>
+                                <div class="item-location">03/2023 - 03/2025</div>
+                            </div>
+                        </div>
+                        <p style="color: #cbd5e1;">Graduated with First Class, Selected for Batch Top, Gold Medalist and Dean's List</p>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Higher National Diploma in Software Engineering</div>
+                                <div class="item-institution">National Institute of Business Management, Colombo, Sri Lanka</div>
+                                <div class="item-location">12/2021 - 12/2022</div>
+                            </div>
+                        </div>
+                        <p style="color: #cbd5e1;">GPA: 3.82</p>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Diploma in Software Engineering</div>
+                                <div class="item-institution">National Institute of Business Management, Colombo, Sri Lanka</div>
+                                <div class="item-location">12/2020 - 01/2021</div>
+                            </div>
+                        </div>
+                        <p style="color: #cbd5e1;">GPA: 3.86</p>
+                    </div>
+
+                    <!-- Technical Skills -->
+                    <h3 class="cv-section-title">Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Programming Languages</h4>
+                            <ul>
+                                <li>C</li>
+                                <li>C++</li>
+                                <li>Java</li>
+                                <li>JavaScript</li>
+                                <li>Go</li>
+                                <li>Python</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Database Management</h4>
+                            <ul>
+                                <li>MySQL</li>
+                                <li>Dynamo DB</li>
+                                <li>Mongo DB</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>AI & ML Tools</h4>
+                            <ul>
+                                <li>OpenAI API</li>
+                                <li>Prompt Engineering</li>
+                                <li>Cursor</li>
+                                <li>Pinecone</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Frameworks & Libraries</h4>
+                            <ul>
+                                <li>Angular</li>
+                                <li>React</li>
+                                <li>Svelte</li>
+                                <li>Spring-Boot</li>
+                                <li>Flutter</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Cloud Management</h4>
+                            <ul>
+                                <li>AWS</li>
+                                <li>GCP</li>
+                                <li>Supabase</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Tools & Environments</h4>
+                            <ul>
+                                <li>Git</li>
+                                <li>Docker</li>
+                                <li>Jira</li>
+                                <li>Vim</li>
+                                <li>Figma</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Key Projects -->
+                    <h3 class="cv-section-title">Key Projects</h3>
+                    
+                    <div class="project-item">
+                        <div class="item-title">Secure Blockchain System for Fashion Design IP Protection</div>
+                        <div class="item-company">Final Year Research Project - BSc (Hons) in Computing</div>
+                        <p style="color: #cbd5e1; margin-top: 10px;">
+                            Designed and built a system using blockchain smart contracts for authorship verification, 
+                            AI-powered similarity detection to identify derivative works, and decentralized storage (IPFS) 
+                            for secure, tamper-proof file management.
+                        </p>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="item-title">Dumriya Live - Full-Stack Train Tracking Web Application</div>
+                        <p style="color: #cbd5e1; margin-top: 10px;">
+                            Full-stack app using Node.js (backend) and Svelte (frontend). Dockerized for local development, 
+                            images stored in AWS ECR, deployed to AWS Lambda. Frontend hosted on S3 with CI/CD via GitHub Actions.
+                        </p>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="item-title">FashionStoreAR - iOS AR Shopping App Prototype</div>
+                        <p style="color: #cbd5e1; margin-top: 10px;">
+                            Engineered an AR shopping app leveraging Swift, ARKit, and Firebase, incorporating MVC architecture, 
+                            SwiftUI, multi-provider authentication, AR try-ons, and real-time data synchronization.
+                        </p>
+                    </div>
+
+                    <!-- Certifications -->
+                    <h3 class="cv-section-title">Certifications</h3>
+                    <div class="certifications-list">
+                        <div class="certification-item">
+                            <div>
+                                <div class="certification-name">AWS SysOps Administrator - Associate</div>
+                                <div class="certification-issuer">Amazon Web Services</div>
+                            </div>
+                            <div class="certification-date">August 2024</div>
+                        </div>
+                        <div class="certification-item">
+                            <div>
+                                <div class="certification-name">AWS AI Practitioner - Foundational</div>
+                                <div class="certification-issuer">Amazon Web Services</div>
+                            </div>
+                            <div class="certification-date">In-progress</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Portfolio</div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/janith-disanayake/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/JanithDisanayake" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://dev.to/janithdisanayake" class="social-link"><i class="fab fa-dev"></i></a>
+                </div>
+                <p class="copyright">© 2025 Janith Disanayake. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Print CV functionality
+        function printCV() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
