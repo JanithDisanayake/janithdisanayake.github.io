@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Full Stack Developer & AI Engineer</title>
+    <title>Janith Disanayake | Software Engineer & Team Lead </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -404,6 +404,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.5s ease;
+            width: 100%;
         }
         
         .timeline-item.visible {
@@ -411,8 +412,41 @@
             transform: translateY(0);
         }
         
-        .timeline-item:nth-child(odd) {
+        .timeline-item.align-left {
+            flex-direction: row;
+        }
+        
+        .timeline-item.align-right {
             flex-direction: row-reverse;
+        }
+        
+        .timeline-item .timeline-content {
+            width: 45%;
+        }
+        
+        .timeline-concurrent {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 50px;
+            width: 100%;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .timeline-concurrent-item {
+            width: 45%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .timeline-concurrent-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-concurrent-item:nth-child(2) {
+            margin-top: 0;
         }
         
         .timeline-content {
@@ -420,7 +454,7 @@
             backdrop-filter: blur(10px);
             border-radius: 15px;
             padding: 25px;
-            width: 45%;
+            width: 100%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
@@ -442,12 +476,16 @@
             transform: rotate(45deg);
         }
         
-        .timeline-item:nth-child(even) .timeline-content::after {
+        .timeline-item.align-left .timeline-content::after,
+        .timeline-concurrent-item:first-child .timeline-content::after {
             right: -10px;
+            left: auto;
         }
         
-        .timeline-item:nth-child(odd) .timeline-content::after {
+        .timeline-item.align-right .timeline-content::after,
+        .timeline-concurrent-item:last-child .timeline-content::after {
             left: -10px;
+            right: auto;
         }
         
         .timeline-date {
@@ -1028,12 +1066,12 @@
         </div>
         <div class="container">
             <div class="hero-content">
-                <h1>Full Stack Developer & <span>AI Engineer</span></h1>
-                <p>Experienced software engineer specializing in full-stack development, AI integration, and cloud solutions. Passionate about building innovative applications and mentoring development teams.</p>
+                <h1>Software Engineer & <span>Team Lead</span></h1>
+                <p>Result-driven Software Engineer with expertise in designing, developing, and optimizing scalable cloud-native solutions. Proven track record in leading cross-functional teams, driving technical excellence, and delivering high-impact projects on time. Adept with React , Angular, Svelte, React-Native, Flutter, iOS, NodeJS, Go, AWS, and AI/ML technologies.</p>
                 <div class="hero-badges">
-                    <span class="badge">Full Stack Development</span>
+                    <span class="badge">Cloud-Native Development</span>
                     <span class="badge">AI & Machine Learning</span>
-                    <span class="badge">Cloud Architecture</span>
+                    <span class="badge">Full Stack Development</span>
                     <span class="badge">Team Leadership</span>
                 </div>
                 <div class="hero-buttons">
@@ -1149,45 +1187,39 @@
                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                     <a href="https://dev.to/janithdisanayake" class="social-link"><i class="fab fa-dev"></i></a>
                 </div>
-                <p class="copyright">© 2025 Your Name. All rights reserved.</p>
+                <p class="copyright">© 2026 Janith Disanayake. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Data from your CV
         const experienceData = [
             {
-                date: "05/2025 - Present",
-                position: "Team Lead",
+                date: "09/2024 – Present",
+                position: "Software Engineer - Cloud",
                 company: "Cloud Parallax (Pvt) Ltd",
                 location: "Colombo, Sri Lanka",
+                concurrent: true,
                 responsibilities: [
-                    "Led the development of an AI-powered travel planning application using Flutter, OpenAI API, and Supabase, enabling real-time itinerary generation and smart recommendations.",
-                    "Implemented prompt engineering strategies and managed vector database integration for semantic search and user personalization.",
-                    "Oversaw sprint planning, code reviews, and architectural planning across all projects.",
-                    "Mentored a team of 6+ developers, assisted with technical upskilling, and improved delivery velocity."
+                    "Design and develop cloud-native software solutions using Go, Svelte, Angular, and Flutter.",
+                    "Architect, deploy, and maintain applications on AWS, utilizing services such as Lambda, S3, ECS, ECR, and CloudWatch.",
+                    "Build and optimize CI/CD pipelines using GitHub Actions and Docker, reducing deployment time by approximately 60%.",
+                    "Integrate AI-driven features using OpenAI APIs, including prompt engineering and vector database integration for personalization and semantic search.",
+                    "Collaborate with product owners and cross-functional teams on system design, architectural decisions, and release planning.",
+                    "Provide technical mentorship and guidance to junior engineers, improving code quality and delivery efficiency.",
+                    "Support production systems with monitoring, logging, and performance optimization."
                 ]
             },
-            // {
-            //     date: "10/2025 - Present",
-            //     position: "Visiting Lecturer",
-            //     company: "National Institute of Business Management",
-            //     location: "Colombo, Sri Lanka",
-            //     responsibilities: [
-            //         "Conducts lectures and academic sessions in alignment with NIBM's curriculum and quality standards.",
-            //         "Delivers both in-person and online teaching while supporting students' academic development."
-            //     ]
-            // },
             {
-                date: "08/2024 – 05/2025",
-                position: "DevOps Engineer",
-                company: "Cloud Parallax (Pvt) Ltd",
+                date: "10/2025 – Present",
+                position: "Visiting Lecturer (Part-Time)",
+                company: "National Institute of Business Management (NIBM)",
                 location: "Colombo, Sri Lanka",
+                concurrent: true,
                 responsibilities: [
-                    "Created robust CI/CD pipelines with GitHub Actions, Docker, and AWS Lambda, reducing deployment time by 60%.",
-                    "Automated cloud infrastructure with AWS services (S3, ECS, CloudWatch) and ensured high availability.",
-                    "Spearheaded performance monitoring, container optimization, and rollout strategies for scalable deployments."
+                    "Deliver lectures and practical sessions aligned with NIBM curriculum standards.",
+                    "Conduct in-person and online teaching sessions in computing and software-related subjects.",
+                    "Mentor students and support academic and technical skill development."
                 ]
             },
             {
@@ -1195,20 +1227,27 @@
                 position: "Full Stack Developer",
                 company: "Cloud Parallax (Pvt) Ltd",
                 location: "Colombo, Sri Lanka",
+                align: "right",
                 responsibilities: [
-                    "Courier Application: A Canadian courier service application. Worked on the admin-fronted, user-fronted, and backend using Angular, Svelte, and GoLang. Involved in various aspects of the application, including testing.",
-                    "Contract Management Project: Collaborated on the contract management project, focusing on planning for our customers' customers. Utilized Svelte, GraphQL, and Go programming languages. Majorly responsible for building the calculator module in conjunction with a co-worker.",
-                    "Technical Mentor: Provided technical training and mentorship to junior developers, ensuring a strong grasp of core technologies and best practices. Also contributed to the hiring process by assisting in candidate evaluation and onboarding support."
+                    "Developed and maintained full-stack features across admin-facing and user-facing applications.",
+                    "Worked with React, Angular, Svelte, NodeJS, and Go to implement frontend components and backend APIs.",
+                    "Participated in testing, debugging, and performance optimization of production systems.",
+                    "Assisted with containerization and deployment workflows using Docker and AWS.",
+                    "Gained hands-on exposure to CI/CD pipelines and modern cloud-based deployment practices.",
+                    "Collaborated with senior engineers during sprint planning, code reviews, and technical discussions."
                 ]
             },
             {
                 date: "03/2023 – 05/2023",
                 position: "Software Implementor",
-                company: "Datanation Systems (Pvt) Ltd",
+                company: "Datamation Systems (Pvt) Ltd",
                 location: "Colombo, Sri Lanka",
+                align: "left",
                 responsibilities: [
-                    "Delivered technical training at Lipton Tea, helping clients effectively manage their workflows using ERP software.",
-                    "Provided implementation support and ensured seamless software adoption across departments."
+                    "Implemented ERP and enterprise software solutions for large-scale clients, including Lipton Tea.",
+                    "Conducted technical training and system onboarding sessions for end users.",
+                    "Customized workflows to meet business requirements and ensure smooth system adoption.",
+                    "Provided implementation support and issue resolution across departments."
                 ]
             }
         ];
@@ -1216,10 +1255,10 @@
         const educationData = [
             {
                 degree: "BSc (Hons) in Computing",
-                institution: "Coventry University",
+                institution: "Coventry University UK",
                 duration: "03/2023 – 03/2025",
                 location: "United Kingdom",
-                details: "Graduated with First Class, Selected for Batch Top, Gold Medalist and Dean's List"
+                details: "Graduated with First Class • Selected for Batch Top, Gold Medalist and Dean's List"
             },
             {
                 degree: "Higher National Diploma in Software Engineering",
@@ -1241,15 +1280,15 @@
             "Programming Languages": ["C", "C++", "Java", "JavaScript", "Go", "Python"],
             "Database Management": ["MySQL", "Dynamo DB", "Mongo DB"],
             "AI & Machine Learning Tools": ["OpenAI API", "Prompt Engineering", "Cursor", "Pinecone"],
-            "Frameworks & Libraries": ["Angular", "React", "Svelte", "Spring-Boot", "Android", "iOS", "Flutter"],
+            "Frameworks & Libraries": ["React", "Angular", "Svelte", "Spring-Boot", "NodeJS", "React-Native", "iOS", "Flutter"],
             "Cloud Management": ["AWS", "GCP", "Supabase"],
-            "Tools & Environments": ["Git", "GitHub", "BitBucket", "Docker", "Jira", "Vim", "Figma"]
+            "Tools & Environments": ["Git", "GitHub", "BitBucket", "Docker", "Jira", "Vim", "Figma", "Linux"]
         };
 
         const projectsData = [
             {
                 title: "Secure Blockchain System for Fashion Design IP Protection",
-                type: "Final Year Research Project - BSc (Hons) in Computing, Coventry University",
+                type: "Final Year Research Project",
                 description: "Designed and built a system using blockchain smart contracts for authorship verification, AI-powered similarity detection to identify derivative works, and decentralized storage (IPFS) for secure, tamper-proof file management.",
                 technologies: ["Blockchain", "Smart Contracts", "AI", "IPFS"]
             },
@@ -1257,25 +1296,19 @@
                 title: "Dumriya Live",
                 type: "Full-Stack Train Tracking Web Application",
                 description: "Full-stack app using Node.js (backend) and Svelte (frontend). Dockerized for local development, images stored in AWS ECR, deployed to AWS Lambda. Frontend hosted on S3 with CI/CD via GitHub Actions.",
-                technologies: ["Node.js", "Svelte", "Docker", "AWS ECR", "AWS Lambda", "S3", "GitHub Actions"]
+                technologies: ["Node.js", "Svelte", "Docker", "AWS", "GitHub Actions"]
             },
             {
                 title: "LIFOAR",
                 type: "Line-Following and Obstacle-Avoiding Robot",
                 description: "Designed and built a robot capable of line following and obstacle avoidance using an Arduino microcontroller programmed in Micro-C language through the Arduino IDE.",
-                technologies: ["Arduino", "Micro-C", "Robotics"]
+                technologies: ["Arduino", "Micro-C", "Robotics", "Embedded Systems"]
             },
             {
-                title: "Flight API",
-                type: "Multi-frontend Web Application",
-                description: "Multi-frontend web app with a Java Spring Boot backend. Built frontend clients using React, Angular, and Vue.js to demonstrate API integration across modern frameworks.",
-                technologies: ["Java Spring Boot", "React", "Angular", "Vue.js"]
-            },
-            {
-                title: "FashionStoreAR",
-                type: "iOS AR Shopping App Prototype for Saras Boutique",
+                title: "AR Fashion Store",
+                type: "iOS AR Shopping App Prototype",
                 description: "Engineered an AR shopping app leveraging Swift, ARKit, and Firebase, incorporating MVC architecture, SwiftUI, multi-provider authentication, AR try-ons, and real-time data synchronization.",
-                technologies: ["Swift", "ARKit", "Firebase", "MVC", "SwiftUI"]
+                technologies: ["Swift", "ARKit", "Firebase", "SwiftUI", "iOS"]
             }
         ];
 
@@ -1288,31 +1321,88 @@
             {
                 name: "AWS AI Practitioner - Foundational",
                 issuer: "Amazon Web Services",
-                date: "In-progress"
+                date: "October 2024"
             }
         ];
 
         // Populate Experience Section
         const timelineContainer = document.querySelector('.timeline');
+        const concurrentIndices = experienceData
+            .map((exp, i) => exp.concurrent ? i : -1)
+            .filter(i => i !== -1);
+        
+        let skipNext = false;
         experienceData.forEach((exp, index) => {
-            const timelineItem = document.createElement('div');
-            timelineItem.className = 'timeline-item';
+            if (skipNext) {
+                skipNext = false;
+                return;
+            }
             
-            const timelineContent = document.createElement('div');
-            timelineContent.className = 'timeline-content';
-            
-            timelineContent.innerHTML = `
-                <div class="timeline-date">${exp.date}</div>
-                <div class="timeline-position">${exp.position}</div>
-                <div class="timeline-company">${exp.company}</div>
-                <div class="timeline-location">${exp.location}</div>
-                <ul>
-                    ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
-                </ul>
-            `;
-            
-            timelineItem.appendChild(timelineContent);
-            timelineContainer.appendChild(timelineItem);
+            if (exp.concurrent && index === concurrentIndices[0]) {
+                // Create concurrent wrapper
+                const concurrentWrapper = document.createElement('div');
+                concurrentWrapper.className = 'timeline-concurrent';
+                
+                // Add first concurrent item (Software Engineer - Cloud, on left)
+                const item1 = document.createElement('div');
+                item1.className = 'timeline-concurrent-item';
+                const content1 = document.createElement('div');
+                content1.className = 'timeline-content';
+                content1.innerHTML = `
+                    <div class="timeline-date">${exp.date}</div>
+                    <div class="timeline-position">${exp.position}</div>
+                    <div class="timeline-company">${exp.company}</div>
+                    <div class="timeline-location">${exp.location}</div>
+                    <ul>
+                        ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
+                    </ul>
+                `;
+                item1.appendChild(content1);
+                concurrentWrapper.appendChild(item1);
+                
+                // Add second concurrent item (Visiting Lecturer, on right)
+                if (concurrentIndices.length > 1) {
+                    const nextExp = experienceData[concurrentIndices[1]];
+                    const item2 = document.createElement('div');
+                    item2.className = 'timeline-concurrent-item';
+                    const content2 = document.createElement('div');
+                    content2.className = 'timeline-content';
+                    content2.innerHTML = `
+                        <div class="timeline-date">${nextExp.date}</div>
+                        <div class="timeline-position">${nextExp.position}</div>
+                        <div class="timeline-company">${nextExp.company}</div>
+                        <div class="timeline-location">${nextExp.location}</div>
+                        <ul>
+                            ${nextExp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
+                        </ul>
+                    `;
+                    item2.appendChild(content2);
+                    concurrentWrapper.appendChild(item2);
+                    skipNext = true;
+                }
+                
+                timelineContainer.appendChild(concurrentWrapper);
+            } else if (!exp.concurrent) {
+                // Create regular timeline item
+                const timelineItem = document.createElement('div');
+                timelineItem.className = `timeline-item align-${exp.align || 'left'}`;
+                
+                const timelineContent = document.createElement('div');
+                timelineContent.className = 'timeline-content';
+                
+                timelineContent.innerHTML = `
+                    <div class="timeline-date">${exp.date}</div>
+                    <div class="timeline-position">${exp.position}</div>
+                    <div class="timeline-company">${exp.company}</div>
+                    <div class="timeline-location">${exp.location}</div>
+                    <ul>
+                        ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
+                    </ul>
+                `;
+                
+                timelineItem.appendChild(timelineContent);
+                timelineContainer.appendChild(timelineItem);
+            }
         });
 
         // Populate Education Section
@@ -1418,7 +1508,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.timeline-item, .project-card, .education-card, .certification-item').forEach(el => {
+        document.querySelectorAll('.timeline-item, .timeline-concurrent, .timeline-concurrent-item, .project-card, .education-card, .certification-item').forEach(el => {
             observer.observe(el);
         });
 
